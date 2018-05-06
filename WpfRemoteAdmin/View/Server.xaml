@@ -1,0 +1,42 @@
+﻿ <UserControl x:Class="WpfRemoteAdmin.View.Server"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:View="clr-namespace:WpfRemoteAdmin.View"
+      xmlns:ViewModel="clr-namespace:WpfRemoteAdmin.ViewModel"
+      xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <Grid x:Name="ServerWindow" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Height="20" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Screen" Margin="1" Grid.Column="0"/>
+            <TextBlock Text="Computer name" Margin="1" Grid.Column="1"/>
+            <TextBlock Text="IP" Margin="1" Grid.Column="2"/>
+        </Grid>
+        
+        <ListBox x:Name="Computers" Margin="10" Grid.Row="1" ItemsSource ="{Binding server.RemoteComputers}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding ComputerScreen}" Width="100" Margin="5 0 5 0" Grid.Column="0"/>
+                        <TextBlock Text="{Binding ComputerName}" Margin="5 0 5 0" Grid.Column="1" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

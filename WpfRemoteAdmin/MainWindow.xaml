@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfRemoteAdmin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfRemoteAdmin"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="500" Width="800" MinWidth="420" MinHeight="450">
+   
+    
+    <Grid Background="#FF2D2D30">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="9*"/>
+            </Grid.ColumnDefinitions>
+       
+        <Grid x:Name="MainMenu" Grid.Column="0">
+                <Border BorderBrush="Black" BorderThickness="0, 0, 3, 0">
+                <StackPanel>
+                    <Button x:Name="btn_Client" Content="Client" Grid.Row="0"  Margin="5" />
+                    <Button x:Name="btn_Server" Content="Server" Grid.Row="1"  Margin="5" Command="{Binding OpenServerCommand}" />
+                    <Button x:Name="btn_Options" Content="Options" Grid.Row="2" Margin="5" />
+                    <Button x:Name="btn_Exit" Content="Exit" Grid.Row="3"  Margin="5" />
+                </StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Column="1" x:Name="mainGrid">
+                
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</Window>
